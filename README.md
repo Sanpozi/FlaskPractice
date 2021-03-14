@@ -3,18 +3,17 @@
 データはcsvで管理。
 
 ## Deploy
-~~~terminal
-python3 -m venv {venvpath}
-source {venvpath}/bin/activate
-pip install requirements.txt
-deactivate
-~~~
 
-.pyファイルを仮想環境下に配置後、
+リポジトリをプル後、
 
 ~~~terminal
-source {venvpath}/bin/activate
-python main.py
+cd {project path}
+mkdir data
+touch data/number.csv
+pip install -r requirements.txt
+python3 main.py
+(ssh接続時などサーバ上のバックグラウンドで実行したい場合は以下)
+nohup python3 main.py 2>&1 
 ~~~
 
 サーバの5000ポートにデプロイされます。
